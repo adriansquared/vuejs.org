@@ -14,6 +14,14 @@ Vue.js allows you to define filters that can be used to apply common text format
 <div v-bind:id="rawId | formatId"></div>
 ```
 
+Filters can also be used in directives such as **v-html** (supported in x.x.x+). Filters are applied differently in this case, and are invoked using the syntax `$options.filters.filterName(object)`:
+
+``` html
+<!-- in v-html -->
+<div v-html="$options.filters.capitalize(message)"></div>
+```
+
+
 You can define local filters in a component's options:
 
 ``` js
